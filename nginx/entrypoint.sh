@@ -8,6 +8,8 @@
         -newkey rsa:2048 -keyout /etc/letsencrypt/live/$DOMAIN/privkey.pem \
         -subj "/C=KR/ST=Seoul/L=Gangnam/O=ACME Inc./CN=DevOps/OU=acme.com" \
         -out /etc/letsencrypt/live/$DOMAIN/fullchain.pem
+
+        openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
 }
 
 /docker-entrypoint.sh "$@"
